@@ -8,6 +8,8 @@ import re
 # Variáveis globais para controle do processo
 process = None
 
+ffmpeg_path = r"C:\ffmpeg\bin\ffmpeg.exe" // baixar o ffmpeg no site https://ffmpeg.org/download.html
+
 def select_file():
     # Abre um diálogo para selecionar um arquivo .dav
     file_path = filedialog.askopenfilename(filetypes=[("DAV Files", "*.dav")])
@@ -38,7 +40,7 @@ def convert_dav_to_mp4_or_avi():
     # Processo de conversão com ffmpeg
     try:
         # Executa o comando ffmpeg para converter o arquivo
-        command = ['ffmpeg', '-i', input_file, '-c:v', 'libx264', '-preset', 'fast', '-crf', '22', output_file]
+        command = [ffmpeg_path, '-i', input_file, '-c:v', 'libx264', '-preset', 'fast', '-crf', '22', output_file]
 
         # Se estiver no Windows, use CREATE_NO_WINDOW para evitar que o terminal apareça
         if os.name == 'nt':  # Se o sistema for Windows

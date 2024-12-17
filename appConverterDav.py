@@ -8,7 +8,8 @@ import re
 # Variáveis globais para controle do processo
 process = None
 
-ffmpeg_path = r"C:\ffmpeg\bin\ffmpeg.exe" // baixar o ffmpeg no site https://ffmpeg.org/download.html
+ffmpeg_path = r"C:\ffmpeg\bin\ffmpeg.exe" #baixar o ffmpeg no site https://ffmpeg.org/download.html
+#colocar nas o a pasta /bin nas variaveis de ambiente dentro do PATH
 
 def select_file():
     # Abre um diálogo para selecionar um arquivo .dav
